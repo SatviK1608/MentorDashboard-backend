@@ -11,13 +11,7 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Adjust allowed headers if needed
   next();
 });
-app.use(cors(
-  {
-    origin: ["https://mentor-dashboard-app.vercel.app", "http://localhost:3000"],
-    methods: ["POST", "GET"],
-    credentials: true
-  }
-));
+app.use(cors());
 app.use(express.json());
 
 
