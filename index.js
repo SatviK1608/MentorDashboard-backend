@@ -8,7 +8,8 @@ const studentsmodel = require('./models/StudentsModel');
 app.use(cors(
   {
     origin: ["https://mentor-dashboard-app.vercel.app", "http://localhost:3000"],
-    methods: ["POST", "GET"]
+    methods: ["POST", "GET"],
+    credentials: true
   }
 ));
 app.use(express.json());
@@ -27,7 +28,11 @@ async function dbConnection() {
   }
 }
 
-console.log(data);
+
+const main = async () => {
+  await dbConnection();
+}
+main();
 app.get("/", (req, res) => {
   res.json("Hello")
 });
