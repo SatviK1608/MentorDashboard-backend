@@ -27,11 +27,6 @@ async function dbConnection() {
   }
 }
 
-var data = [];
-const main = async () => {
-  data = await dbConnection();
-}
-main();
 console.log(data);
 app.get("/", (req, res) => {
   res.json("Hello")
