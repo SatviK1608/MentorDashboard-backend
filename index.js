@@ -8,8 +8,7 @@ const studentsmodel = require('./models/StudentsModel');
 app.use(cors(
   {
     origin: ["https://mentor-dashboard-app.vercel.app", "http://localhost:3000"],
-    methods: ["POST", "GET"],
-    credentials: true
+    methods: ["POST", "GET"]
   }
 ));
 app.use(express.json());
