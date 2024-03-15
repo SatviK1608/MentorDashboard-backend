@@ -5,6 +5,12 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const mentor = require('./models/MentorModel');
 const studentsmodel = require('./models/StudentsModel');
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://mentor-dashboard-app.vercel.app'); // Replace with your frontend domain
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Adjust allowed methods if needed
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Adjust allowed headers if needed
+  next();
+});
 app.use(cors(
   {
     origin: ["https://mentor-dashboard-app.vercel.app", "http://localhost:3000"],
