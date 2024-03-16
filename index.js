@@ -38,7 +38,7 @@ app.get("/", (req, res) => {
 });
 app.post('/', async (req, res) => {
 
-  const { email, password } = req.body;
+  const { email, password } = JSON.parse(req.body);
   console.log("hii");
   const user = await mentor.findOne({ email });
   if (!user) {
