@@ -40,7 +40,6 @@ app.post('/', async (req, res) => {
 
   const {email, password } = req.body;
   console.log("hii");
-  return res.status(200).json({bodydata:req.body});
   const user = await mentor.findOne({ email });
   if (!user) {
     return res.status(200).json({ message: 'Invalid email or password' });
