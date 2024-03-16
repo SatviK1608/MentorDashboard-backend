@@ -39,8 +39,8 @@ app.get("/", (req, res) => {
 app.post('/', async (req, res) => {
 
   const {email, password } = req.body;
-  console.log("hii");
   const user = await mentor.findOne({ email });
+  console.log(user);
   if (!user) {
     return res.status(200).json({ message: 'Invalid email or password' });
   }
